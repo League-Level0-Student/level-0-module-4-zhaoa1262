@@ -39,7 +39,10 @@ public class HappyPet {
 	private static void feed (String feedThePet) {
 		JOptionPane.showMessageDialog(null, "You pet will smile when fed");
 	}
+		
+		
+		
+	
 	
 	//    Each method should create a pop-up with the pet's response (eg. cat might purr when pet), 
 	//    and INCREMENT the pet's happiness Level.
-}
