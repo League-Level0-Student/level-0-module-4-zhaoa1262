@@ -17,31 +17,63 @@ public class HappyPet {
 		
 			// 3. Use showOptionDialog to ask the user what they want to do to make their pet happy
 		
+		for(int i = 0 ; i < 5; i++) {
+		
+			if(happinessLevel >= 25) {
+				JOptionPane.showMessageDialog(null,"You love your pet!");
+				break;
+			}
+			
+			
+		int task = JOptionPane.showOptionDialog(null, "What will you do to keep your pet happy?", "Request", 0, JOptionPane.INFORMATION_MESSAGE, null,
+				new String[] { "feed", "bathe", "groom" }, null);
 		
 		
 			//    (eg: cuddle, food, water, take a walk, groom, clean up poop).
 			//    Make sure to customize the title and question too.
-			int task = JOptionPane.showOptionDialog(null, "What will you do to keep your pet happy?", "Request", 0, JOptionPane.INFORMATION_MESSAGE, null,
-					new String[] { "feed", "water", "groom" }, null);
+			
 
 			// 5. Use user input to call the appropriate method created in step 4.
 			
-			if(pet.equals("feed")) {
+		
+			if(task == 0) {
 				feed(pet);
+			}
+			
+			if(task == 2) {
+				groom(pet);
+			}
+			
+			if(task == 1) {
+				bathe(pet);
 			}
 			
 			// 6. If you determine the happiness level is large enough, tell the
 			//    user that he loves his pet and use break; to exit for loop.
-
+		}
 	}
-
+int level = 0;
 	// 4. Create methods to handle each of your user selections.
 	private static void feed (String feedThePet) {
-		JOptionPane.showMessageDialog(null, "You pet will smile when fed");
+		JOptionPane.showMessageDialog(null, "Your pet will sleep happily after the feeding");
+		happinessLevel += 10;
 	}
+	
+	private static void bathe (String waterThePet) {
+		JOptionPane.showMessageDialog(null, "Your pet will shake happily after the cleansing");
+		happinessLevel += 5;
+	}
+	
+	private static void groom (String groomThePet) {
+		JOptionPane.showMessageDialog(null, "Your pet will strut happily down the sidewalk");
+		 happinessLevel += 15;
+	}
+}
 		
 		
-		
+		//groom = 2
+		//bathe = 1
+		//feed = 0
 	
 	
 	//    Each method should create a pop-up with the pet's response (eg. cat might purr when pet), 
